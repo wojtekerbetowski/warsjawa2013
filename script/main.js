@@ -1,9 +1,9 @@
 $(document).ready(function() {
 	$("#count").countdown({
 		//to change lunch date just replace the current date with yours .
-		date: "october 12, 2013",
+		date: "october 12, 2013, 08:00",
 		//html code in count div here.
-		htmlTemplate: "<div id='days-count' class='numbers'>%{d}<span class='days-label'>days</span></div> <div id='hours-count' class='numbers'>%{h}<span class='hours-label'>hours</span></div><div id='min-count' class='numbers'>%{m}<span class='min-label'>min</span></div><div id='sec-count' class='numbers'>%{s}<span class='sec-label'>sec</span></div>"
+		htmlTemplate: "<div id='days-count' class='numbers'>%{d}<span class='days-label'>dni</span></div> <div id='hours-count' class='numbers'>%{h}<span class='hours-label'>godzin</span></div><div id='min-count' class='numbers'>%{m}<span class='min-label'>minut</span></div><div id='sec-count' class='numbers'>%{s}<span class='sec-label'>sekund</span></div>"
 	});
 });
 
