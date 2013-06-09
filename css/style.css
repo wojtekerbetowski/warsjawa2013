@@ -1,353 +1,156 @@
-/*/////////////////////////////////////////////////////////////////////////////////////////////////////
-//Neon - Responsive Under Cunstruction Page
-/////////////////////////////////////////////////////////////////////////////////////////////////////*/
-
-
-* {
-margin: 0;
-padding: 0;
-outline: 0;
-}
-
-/* reset */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-	margin:0;
-	padding:0;
-	border:0;
-	font-size:100%;
-	font:inherit;
-	vertical-align: baseline;
-}
-
 /*neon font load*/
 @font-face {
-	font-family: 'Neon club music';
-	src: url('../font/NEONCLUBMUSIC.otf');
+    font-family: 'Neon club music';
+    src: url('../font/NEONCLUBMUSIC.otf');
 }
 
-
-body{
-font-family:'Neon club music',sans-serif;
-color:#fff;
-text-align:center;
+body {
+    font-family:'Neon club music', sans-serif;
+    color: #ffffff;
+    background: #000 url(../img/bg2.png)
 }
 
-/*letter light off*/
 i.off {
-	color: #2C2C2C;
-	text-shadow: 7px 7px 5px rgba(0, 0, 0, 0.5);
+    font-style: normal;
+    color: #2C2C2C;
+    text-shadow: 7px 7px 5px rgba(0, 0, 0, 0.5);
 }
-
-/*background patterns*/
-
-.bg1{background: #000 url(../img/bg.png);}
-.bg2{background: #000 url(../img/bg1.png);}
-.bg3{background: #000 url(../img/bg2.png);}
-.bg4{background: #000 url(../img/bg3.png);}
-
 
 /*disable test decoration from links*/
 a {
-text-decoration: none;
-color: white;
-text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 120px;
+    padding: 90px 0 20px 0;
+}
+
+h1 i {
+    font-style: normal;
 }
 
 /*welcome message*/
 p{
-font-size: 32px;
-padding-top: 3%;
-text-transform: uppercase;
+    font-size: 32px;
+    padding-top: 3%;
+    text-transform: uppercase;
 }
 
 /*used for second ligne in welcome message*/
 p > span{
-	margin-top: 10px;
-	font-size: 22px;}
+    margin-top: 10px;
+    font-size: 22px;}
 
 /*main container*/
 #container{
-width: 800px;
-margin: 0 auto;
+    width: 800px;
+    margin: 0 auto;
 }
 
 /* SKINS SELECTORS */
 
 .skins{font-size: 14px;
-text-transform: uppercase;}
+    text-transform: uppercase;}
 
-/* BLUE SKIN */
-.blue{
-text-shadow: 0 0 5px #02AEFF, 0 0 10px #02AEFF, 0 0 15px #02AEFF, 0 0 20px #02AEFF, 0 0 25px #02AEFF, 0 0 30px #02AEFF, 0 0 35px #02AEFF, 0 0 40px #02AEFF;
+.blue {
+    text-shadow: 0 0 5px #02AEFF, 0 0 10px #02AEFF, 0 0 15px #02AEFF, 0 0 20px #02AEFF, 0 0 25px #02AEFF, 0 0 30px #02AEFF, 0 0 35px #02AEFF, 0 0 40px #02AEFF;
 }
-   /*blue circle png*/
-.blue .numbers{
-background: url(../img/blue/circle.png) no-repeat;
-}
-
-/*blue shadow for mail input*/
 
 .blue input[type="submit"]{border: 1px solid #02AEFF;background:#02AEFF;}
-   
+
 .blue input[type="text"] ,.blue textarea{
-box-shadow: 0 0 5px #02AEFF, 0 0 10px #02AEFF, 0 0 20px #02AEFF, 0 0 30px
+    box-shadow: 0 0 5px #02AEFF, 0 0 10px #02AEFF, 0 0 20px #02AEFF, 0 0 30px
 }
 
 .blue input[type="text"]:focus,.blue textarea:focus{
-box-shadow: 0 0 10px #02AEFF, 0 0 20px #02AEFF, 0 0 30px #02AEFF, 0 0 40px !important;
+    box-shadow: 0 0 10px #02AEFF, 0 0 20px #02AEFF, 0 0 30px #02AEFF, 0 0 40px !important;
 }
 
 .blue input[type="text"]:hover,.blue textarea:hover{
-box-shadow: 0 0 5px #02AEFF, 0 0 10px #02AEFF, 0 0 20px #02AEFF, 0 0 30px 
+    box-shadow: 0 0 5px #02AEFF, 0 0 10px #02AEFF, 0 0 20px #02AEFF, 0 0 30px
 }
-	/*blue social png*/
+/*blue social png*/
 .blue #s-google{background-image: url(../img/blue/google-icon.png);}
 .blue #s-facebook{background-image: url(../img/blue/facebook-icon.png);}
 .blue #s-twitter{background-image: url(../img/blue/twitter-icon.png);}
 
-
-/* RED SKIN */
-
-.red{
-text-shadow: 0 0 5px #ff0202, 0 0 10px #ff0202, 0 0 15px #ff0202, 0 0 20px #ff0202, 0 0 30px #ff0202, 0 0 35px #ff0202, 0 0 40px #ff0202, 0 0 45px #ff0202;
-}
-
-.red .numbers{
-background: url(../img/red/circle.png) no-repeat;
-}
-
-.red input[type="submit"]{border: 1px solid #ff0202;background:#ff0202;}
-
-.red input[type="text"],.red textarea{
-box-shadow: 0 0 5px #ff0202, 0 0 10px #ff0202, 0 0 20px #ff0202, 0 0 30px 
-}
-
-.red input[type="text"]:focus,.red textarea:focus{
-box-shadow: 0 0 10px #ff0202, 0 0 20px #ff0202, 0 0 30px #ff0202, 0 0 40px !important;
-}
-
-.red input[type="text"]:hover,.red textarea:hover{
-box-shadow: 0 0 5px #ff0202, 0 0 10px #ff0202, 0 0 20px #ff0202, 0 0 30px 
-}
-
-.red #s-google{background-image: url(../img/red/google-icon.png);}
-.red #s-facebook{background-image: url(../img/red/facebook-icon.png);}
-.red #s-twitter{background-image: url(../img/red/twitter-icon.png);}
-
-
-
-/* PURPLE SKIN */
-.purple{
-text-shadow: 0 0 10px #fc02ff, 0 0 15px #fc02ff, 0 0 20px #fc02ff, 0 0 25px #fc02ff, 0 0 30px #fc02ff, 0 0 35px #fc02ff, 0 0 40px #fc02ff, 0 0 45px #fc02ff;
-}
-
-.purple .numbers{
-background: url(../img/purple/circle.png) no-repeat;
-}
-
-.purple input[type="submit"]{border: 1px solid #fc02ff;background:#fc02ff;}
-
-.purple input[type="text"],.purple textarea{
-box-shadow: 0 0 5px #fc02ff, 0 0 10px #fc02ff, 0 0 15px #fc02ff, 0 0 20px;
-}
-
-.purple input[type="text"]:focus,.purple textarea:focus{
-box-shadow: 0 0 10px #fc02ff, 0 0 15px #fc02ff, 0 0 20px #fc02ff, 0 0 25px !important;
-}
-
-.purple input[type="text"]:hover,.purple textarea:hover{
-box-shadow: 0 0 5px #fc02ff, 0 0 10px #fc02ff, 0 0 15px #fc02ff, 0 0 20px;
-}
-
-.purple #s-google{background-image: url(../img/purple/google-icon.png);}
-.purple #s-facebook{background-image: url(../img/purple/facebook-icon.png);}
-.purple #s-twitter{background-image: url(../img/purple/twitter-icon.png);}
-
-
-
-
-/* GREEN SKIN */
-.green{
-text-shadow: 0 0 10px #02ff08, 0 0 15px #02ff08, 0 0 20px #02ff08, 0 0 25px #02ff08, 0 0 30px #02ff08, 0 0 35px #02ff08, 0 0 40px #02ff08, 0 0 45px #02ff08;
-}
-
-.green .numbers{
-background: url(../img/green/circle.png) no-repeat;
-}
-
-.green input[type="submit"]{border: 1px solid #02ff08;	background:#02ff08;}
-
-.green input[type="text"],.green textarea{
-box-shadow: 0 0 5px #02ff08, 0 0 10px #02ff08, 0 0 20px #02ff08, 0 0 30px 
-}
-
-.green input[type="text"]:focus,.green textarea:focus{
-box-shadow: 0 0 10px #02ff08, 0 0 20px #02ff08, 0 0 30px #02ff08, 0 0 40px !important;
-}
-
-.green input[type="text"]:hover,.green textarea:hover{
-box-shadow: 0 0 5px #02ff08, 0 0 10px #02ff08, 0 0 20px #02ff08, 0 0 30px 
-}
-
-.green #s-google{background-image: url(../img/green/google-icon.png);}
-.green #s-facebook{background-image: url(../img/green/facebook-icon.png);}
-.green #s-twitter{background-image: url(../img/green/twitter-icon.png);}
-
-
 /* SOCIAL */
 #social {
-max-width: 100%;
-display: inline-table;
-margin-top: 10%;
+    max-width: 100%;
+    display: inline-table;
+    margin-top: 40px;
 }
 
 #social > a {
-margin: -37px 8px 25px 5px;
-display: inline-block;
-width: 60px;
-height: 60px;
-background-position: 0px -35px;
-background-repeat: no-repeat;
-vertical-align: top;
+    margin: -37px 8px 25px 5px;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background-position: 0px -35px;
+    background-repeat: no-repeat;
+    vertical-align: top;
 }
 
 #social > a:active {
-margin: -37px 8px 25px 5px;
-display: inline-block;
-width: 60px;
-height: 45px;
-background-position: -1px 10px;
-background-repeat: no-repeat;
-vertical-align: top;
-}
-
-/*logo style*/
-#logo{
-padding-top: 10px;
-text-align: center;
-font-size: 142px;
-}
-
-/* tools panel to change skin or background pattern*/
-
-
-#tools img{
-	background: black;
-	width:22px; height:22px;
-	border: 1px solid white;
-}
-
-#skins-select{
-	margin-bottom: 31px;
+    margin: -37px 8px 25px 5px;
+    display: inline-block;
+    width: 60px;
+    height: 45px;
+    background-position: -1px 10px;
+    background-repeat: no-repeat;
+    vertical-align: top;
 }
 
 
 /* styles for count down numbers*/
-.numbers{
-width: 192px;
-height: 144px;
-padding-top: 65px;
-float: left;
-font-size: 40px;
+.numbers {
+    width: 192px;
+    height: 160px;
+    padding-top: 84px;
+    font-size: 40px;
+    background: url(../img/blue/circle.png) no-repeat;
 }
 
 /* styles for text under numbers*/
 .numbers span{
-	font-size:10px;
-	text-transform:uppercase;
-	display:block;
-	margin:0 0 0 0
+    font-size:10px;
+    text-transform:uppercase;
+    display:block;
+    margin:0 0 0 0
 }
 
 input[type="text"],textarea{
-	background:#fff;
-	width:422px;
-	font-size:17px;
-	border:0;
-	border-radius:4px;
-	padding-left: 15px;
+    background:#fff;
+    width:422px;
+    font-size:17px;
+    border:0;
+    border-radius:4px;
+    padding-left: 15px;
 }
 
 input[type="text"]{
-	height:30px;
-}
-
-
-textarea{
-	height:130px;
-	margin-top: 13px;
+    height:30px;
 }
 
 
 input[type="submit"]{
-	color: white;
-	cursor:pointer
+    color: white;
+    cursor:pointer
 }
 
 #show-hide-contact{
-	position: absolute;
-	margin-top: 130px;
-}
-
-#contact-form{
-position: relative;
-margin-top: 50px;
-}
-
-#contact-submit{
-	position: relative;
-	width:72px;
-	height:28px;
-	margin-left:-83px;
-	border-radius: 4px;
-	top:30px;
+    position: absolute;
+    margin-top: 130px;
 }
 
 #mail-submit{
-	width:92px;
-	height:28px;
-	margin-left:-103px;
-	border-top-right-radius: 4px;
-	border-bottom-right-radius: 4px;
-}
-
-
-/*.-------Cross browsers style fix---------*/
-/*this fix button margin in FF*/
-@-moz-document url-prefix() {
-	#show-hide-contact{margin-left: -177px;}
-}
-/*this fix buttons margin in Opera*/
- @media not screen and (1) {
-	#show-hide-contact {margin-left: -190px;}
-	#contact-submit {margin-left: -81px !important;}
-}
-
-/*.-------Responsive style---------*/
-
-/*Mobile phones 0 x 240*/
-@media only screen and (min-width: 0px) and (max-width: 319px) {
-	#logo{padding-top: 32px;margin-bottom: 32px; font-size: 60px}
-	p{font-size: 22px;}
-    #container{width:240px;}
-	#count{width:240px;margin-left: 10%;}
-	input[type="text"],textarea{width:200px;}
-	#social {margin-top: 25%;}
-}
-
-/*iPhone portrait 320 x 480*/
-@media only screen and (min-width: 320px) and (max-width: 480px) {
-   	p{font-size: 32px;}
-    #container{width:320px;}
-	#count{width:320px;margin-left: 20%;}
-	input[type="text"],textarea{width:280px;}
-	#social {margin-top: 20%;}
-}
-
-/*Tablets */
-@media only screen and (min-width:481px) and (max-width:767px) {
-    #container{width:480px;}
-	#count{width:480px;margin-left: 10%;}
-	input[type="text"],textarea{width:380px;}
-	#social {margin-top: 15%;}
+    width:92px;
+    height:28px;
+    margin-left:-106px;
+    margin-top:-10px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
 }

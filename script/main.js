@@ -3,12 +3,11 @@ $(document).ready(function() {
 		//to change lunch date just replace the current date with yours .
 		date: "october 12, 2013, 08:00",
 		//html code in count div here.
-		htmlTemplate: "<div id='days-count' class='numbers'>%{d}<span class='days-label'>dni</span></div> <div id='hours-count' class='numbers'>%{h}<span class='hours-label'>godzin</span></div><div id='min-count' class='numbers'>%{m}<span class='min-label'>minut</span></div><div id='sec-count' class='numbers'>%{s}<span class='sec-label'>sekund</span></div>"
+		htmlTemplate: $('#count').html()
 	});
 });
 
 
-////////////////////animation script////////////////////////
 var logoText = document.getElementById("logo"),
   text = logoText.innerHTML,
 	chars = text.length,
