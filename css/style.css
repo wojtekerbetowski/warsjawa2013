@@ -78,12 +78,6 @@ p > span{
 .blue #s-twitter{background-image: url(../img/blue/twitter-icon.png);}
 
 /* SOCIAL */
-#social {
-    max-width: 100%;
-    display: inline-table;
-    margin-top: 40px;
-}
-
 #social > a {
     margin: -37px 8px 25px 5px;
     display: inline-block;
@@ -104,6 +98,13 @@ p > span{
     vertical-align: top;
 }
 
+.social-container {
+    width: 300px;
+    margin: 0 auto;
+    float: none;
+    margin-top: 40px;
+}
+
 
 /* styles for count down numbers*/
 .numbers {
@@ -112,6 +113,11 @@ p > span{
     padding-top: 84px;
     font-size: 40px;
     background: url(../img/blue/circle.png) no-repeat;
+}
+.numbers-container {
+    width: 950px;
+    margin: 0 auto;
+    float: none;
 }
 
 /* styles for text under numbers*/
