@@ -2,53 +2,78 @@
 <html class="bg3">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
 
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <!--[if IE]> <link rel="stylesheet" type="text/css" href="css/ie.css" /><![endif]-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <!--[if IE]>
+    <link rel="stylesheet" type="text/css" href="css/ie.css"/><![endif]-->
     <title>Warsjawa 2013</title>
 </head>
 <body class="blue">
 
-<div class="row text-center">
-    <h1 id="logo">wARSJAwA</h1>
-    <p>
-        Warszawa, 12 Października 2013
-    </p>
-</div>
+<div class="container">
 
-<div class="row text-center">
-    <p>
-        <span>do startu konferencji pozostało</span>
-    </p>
-</div>
+    <div class="row">
+        <div class="span12 text-center">
+            <h1 id="logo">wARSJAwA</h1>
 
+            <p>
+                Warszawa, 12 Października 2013
+            </p>
+        </div>
+    </div>
 
-<div class="row numbers-container">
-    <!-- COUNTDOWN code generated in main.js -->
-    <div id="count" class="text-center">
-        <div id='days-count' class='numbers span3'>%{d}<span class='days-label'>dni</span></div>
-        <div id='hours-count' class='numbers span3'>%{h}<span class='hours-label'>godzin</span></div>
-        <div id='min-count' class='numbers span3'>%{m}<span class='min-label'>minut</span></div>
-        <div id='sec-count' class='numbers span3'>%{s}<span class='sec-label'>sekund</span></div>
+    <div class="row">
+        <div class="span12 text-center">
+            <p>
+                <span>do startu konferencji pozostało</span>
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- COUNTDOWN code generated in main.js -->
+        <div id="count">
+            <div class="span12 text-center">
+                <ul class="inline">
+                    <li><div class='numbers'>%{d}<span>dni</span></div></li>
+                    <li><div class='numbers'>%{h}<span>godzin</span></div></li>
+                    <li><div class='numbers'>%{m}<span>minut</span></div></li>
+                    <li><div class='numbers'>%{s}<span>sekund</span></div></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row text-center">
+        <div class="span12 text-center">
+            <form method="POST"
+                  action="https://groups.google.com/group/warszawa-jug-conference-announce/boxsubscribe?hl=pl"
+                  target="_blank">
+                <div id="subscribe-form">
+                    <input id="mail-input" placeholder="Podaj adres email, aby być na bieżąco" type="text"
+                           name="email"/>
+                    <input id="mail-submit" type="submit" value="Daj mi znać" name="Submit"/>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="social" class="row">
+        <div class="span4 offset4 text-center">
+            <a href="https://twitter.com/warsjawa" id="s-twitter"></a>
+            <a href="#" id="s-facebook"></a>
+            <a href="#" id="s-google"></a>
+        </div>
     </div>
 </div>
 
-<div class="row text-center">
-    <form method="POST" action="https://groups.google.com/group/warszawa-jug-conference-announce/boxsubscribe?hl=pl" target="_blank">
-        <div id="subscribe-form">
-            <input id="mail-input" placeholder="Podaj adres email, aby być na bieżąco" type="text" name="email"/>
-            <input id="mail-submit" type="submit" value="Daj mi znać" name="Submit"/>
-        </div>
-    </form>
-</div>
-
-<div id="social" class="social-container">
-    <a href="https://twitter.com/warsjawa" id="s-twitter"></a>
-    <a href="#" id="s-facebook"></a>
-    <a href="#" id="s-google"></a>
-</div>
+<!--<div id="social" class="social-container">-->
+<!--<a href="https://twitter.com/warsjawa" id="s-twitter"></a>-->
+<!--<a href="#" id="s-facebook"></a>-->
+<!--<a href="#" id="s-google"></a>-->
+<!--</div>-->
 
 <script src="script/bootstrap.js"></script>
 <script src="script/jquery.min.js" type="text/javascript"></script>

@@ -44,12 +44,6 @@ p > span{
     margin-top: 10px;
     font-size: 22px;}
 
-/*main container*/
-#container{
-    width: 800px;
-    margin: 0 auto;
-}
-
 /* SKINS SELECTORS */
 
 .skins{font-size: 14px;
@@ -78,8 +72,8 @@ p > span{
 .blue #s-twitter{background-image: url(../img/blue/twitter-icon.png);}
 
 /* SOCIAL */
-#social > a {
-    margin: -37px 8px 25px 5px;
+#social a {
+    /*margin: -37px 8px 25px 5px;*/
     display: inline-block;
     width: 60px;
     height: 60px;
@@ -98,30 +92,18 @@ p > span{
     vertical-align: top;
 }
 
-.social-container {
-    width: 300px;
-    margin: 0 auto;
-    float: none;
-    margin-top: 40px;
-}
-
 
 /* styles for count down numbers*/
 .numbers {
     width: 192px;
-    height: 160px;
+    height: 105px;
     padding-top: 84px;
     font-size: 40px;
     background: url(../img/blue/circle.png) no-repeat;
 }
-.numbers-container {
-    width: 950px;
-    margin: 0 auto;
-    float: none;
-}
 
 /* styles for text under numbers*/
-.numbers span{
+.numbers span {
     font-size:10px;
     text-transform:uppercase;
     display:block;
