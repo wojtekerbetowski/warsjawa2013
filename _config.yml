@@ -1,0 +1,24 @@
+locales:
+  pl:
+    time_and_place: Warszawa, 12 Października 2013
+    time_left: do konferencji pozostało
+
+    days: dni
+    hours: godzin
+    minutes: minut
+    seconds: sekund
+
+    subscribe_email: Podaj adres email, aby być na bieżąco
+    subscribe_button: Daj mi znać
+
+  en:
+    time_and_place: Warsaw, 12nd October 2013
+    time_left: conference starts in
+
+    days: days
+    hours: hours
+    minutes: minutes
+    seconds: seconds
+
+    subscribe_email: Enter e-mail address to be updated
+    subscribe_button: Let me know
