@@ -12,7 +12,18 @@
 <body class="blue">
 
 <div class="container">
-
+    <div class="row">
+        <div class="span12 text-center">
+            {% if page.locale == 'pl' %}
+            <span style="font-weight: bold;">pl</span>
+            <a href="/en/">en</a>
+            {% endif %}
+            {% if page.locale == 'en' %}
+            <span style="font-weight: bold;">en</span>
+            <a href="/">pl</a>
+            {% endif %}
+        </div>
+    </div>
     <div class="row">
         <div class="span12 text-center">
             <h1 id="logo">wARSJAwA</h1>
