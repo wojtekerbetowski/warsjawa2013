@@ -56,7 +56,7 @@ function flicker() {
 (function loop() {
     var rand = randomFromInterval(500,3000);
 
-	randomLetter = randomFromInterval(0, 3);
+	randomLetter = randomFromInterval(0, letters.length-1);
 	randomLetter = letters[randomLetter];
 	
 	flickerNumber = randomFromInterval(0, 6);
