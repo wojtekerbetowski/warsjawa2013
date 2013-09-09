@@ -7,7 +7,11 @@
 body {
     font-family:'Neon club music', sans-serif;
     color: #ffffff;
-    background: #000 url(../img/bg2.png)
+    background: #000 url(../img/bg2.png);
+}
+
+.modal {
+    background: #000 url(../img/bg2.png);
 }
 
 i.off {
@@ -20,7 +24,6 @@ i.off {
 a {
     text-decoration: none;
     color: white;
-    text-transform: uppercase;
 }
 
 h1 {
@@ -32,17 +35,10 @@ h1 i {
     font-style: normal;
 }
 
-/*welcome message*/
-p{
-    font-size: 32px;
+p {
     padding-top: 3%;
     text-transform: uppercase;
 }
-
-/*used for second ligne in welcome message*/
-p > span{
-    margin-top: 10px;
-    font-size: 22px;}
 
 /* SKINS SELECTORS */
 
@@ -83,7 +79,6 @@ p > span{
 }
 
 #social > a:active {
-    margin: -37px 8px 25px 5px;
     display: inline-block;
     width: 60px;
     height: 45px;
@@ -141,4 +136,28 @@ input[type="submit"]{
     margin-top:-10px;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
+}
+
+.center {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#agenda_table {
+
+}
+
+#agenda_table td, #agenda_table th {
+    text-align: center;
+    vertical-align: middle;
+}
+
+#agenda_table th {
+    width: 25%;
+}
+
+#agenda_table td {
+    height: 150px;
+    font-size: large;
 }
