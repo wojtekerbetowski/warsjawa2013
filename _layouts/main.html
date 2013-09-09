@@ -68,15 +68,16 @@
             </thead>
             <tbody>
             {% for track in page.tracks %}
-            {% assign display_track_name = forloop.index == 0 %}
             {% for path in track.paths %}
+            {% assign display_track_name = false %}
+            {% if forloop.index == 1 %}{% assign display_track_name = true %}{%endif%}
             <tr>
                 {% if display_track_name %}
-                <td rowspan="{{ track.paths.length }}">JVM</td>
+                <td rowspan="{{ track.paths | size }}">{{ track.name }}</td>
                 {% endif %}
                 {% for talk in path.talks %}
-                <td>
-                    <div class="modal hide fade" id="lb_{{ talk.id }}">
+                <td colspan="{{talk.slots}}">
+                    <div class="modal hide fade" id="modal_{{ talk.id }}">
                         <div class="modal-header">
                             <h3>{{ talk.title }}</h3>
                         </div>
@@ -84,13 +85,16 @@
                             <div>
                                 <img src="{{ talk.speaker.photo }}" style="height: 150px; float: left;"/>
                                 <h4>{{ talk.speaker.name }}</h4>
+                                <hr/>
                                 <p>{{ talk.speaker.bio }}</p>
+                                <hr/>
                                 <p>{{ talk.description }}</p>
+                                <hr/>
                                 <p>{{ talk.requirements }}</p>
                             </div>
                         </div>
                     </div>
-                    <a data-toggle="modal" href="#lb_java8">{{ talk.title }}</a>
+                    <a data-toggle="modal" href="#modal_{{ talk.id }}">{{ talk.title }}</a>
                 </td>
                 {% endfor %}
             </tr>
@@ -100,12 +104,6 @@
         </table>
     </div>
 </div>
-
-<!--<div id="social" class="social-container">-->
-<!--<a href="https://twitter.com/warsjawa" id="s-twitter"></a>-->
-<!--<a href="#" id="s-facebook"></a>-->
-<!--<a href="#" id="s-google"></a>-->
-<!--</div>-->
 
 <script src="/script/jquery.min.js" type="text/javascript"></script>
 <script src="/script/bootstrap.js"></script>
