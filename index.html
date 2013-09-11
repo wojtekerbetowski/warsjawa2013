@@ -60,6 +60,50 @@ tracks:
         spots: 30
         description: "Podczas tych warsztatów zapoznamy się ze Scalą, - zarówno z jej  podstawowymi jak i bardziej zaawansowanymi cechami. Będziemy na bierząco kodować przykłady związane z nowo poznanym feature języka oraz zastanawiać się jakie implikacje na aplikacje pisane w Scali ma dany konstrukt językowy.<br/><br/>Poza ogólnym zapoznawaniem się z językiem, można spodziewać się pewnej dawki war stories. Czyli, jakie podejścia wypalają a jakie okazują się problematyczne na dłuższą metę, co powinno Wam oszczędzić dowiadywania się o tych złych decyzjach \"the hard way\"."
         requirements: "Potrzebny będzie własny laptop z zainstalowanymi:<ul><li>sbt, zalecany sposób: <a href=\"https://github.com/paulp/sbt-extras\" target=\"_blank\">https://github.com/paulp/sbt-extras</a></li><li>IDE ze Scala pluginem, (bardzo) zalecane: IntelliJ IDEA</li><li>jak wynika z powyższego JDK ;-)</li><li>zalecany OS: GNU/Linux lub MacOS, odradzany: Windows</li></ul>"
+- name: Architecture & Testing
+  paths:
+    - talks:
+      - id: legacyCode
+        title: Legacy Code - Twój wróg, więc naucz się z nim postępować
+        speaker:
+          name: Tomasz Bartczak i Adam Pierzchała
+          photo: /img/speakers/tomekbartczakadampierchala.jpg
+          bio: "Tomasz Bartczak<br/>
+			Entuzjasta Pair Programming, codziennie praktykuje TDD, choć nie przepada za mockami. Automatyzuje wszystko co wpadnie mu w ręce. Tworzy software i rozwija się w Pragmatists.
+			<br/><br/>Adam Pierzchała<br/>
+			Pasjonat programowania i zwinnych metodyk. Na co dzień programuje w
+			Javie, po godzinach tworzy gry i gra na fortepianie."
+        slots: 1
+        spots: 30
+        description: "Legacy Code, to codzienność dla Wielu z nas.<br/>
+        Praca z kodem bez testów, na dodatek nie do końca zrozumiałym.<br/><br/>
+        \"A co jeśli ta zmiana coś zepsuje?\"  - pyta się w duchu ktoś, kto zmienia taki kod.<br/>
+        \"Oby nic nie zepsuła\" - odpowiada sobie zaraz, komituje i liczy na testy QA.<br/><br/>
+        Jeśli taka sytuacja (Edit and Pray) jest Wam choć trochę znana - zapraszam na nasz warsztat.<br/><br/>
+        Na warsztacie będziemy refaktoryzować kawałki kodu Legacy (będzie to kod bez testów, no i - w miarę skomplikowany) <br/>
+        Pomogą nam w tym testy charakteryzacyjne, dublerzy testowi, metryki pokrycia kodu testami, oraz testowanie mutacyjne biblioteką PIT.<br/><br/>
+        Warsztat kierowany jest do osób z znających Javę i mających choćby małe doświadczenie w testowaniu jednostkowym."
+        requirements: "Uczestniku, musisz znać Javę i przynieść laptop ze środowiskiem. Potrzebne Ci będzie jakieś IDE oraz maven lub gradle."
+      - id: testingreloaded
+        title: Testing reloaded
+        speaker:
+          name: Michał Lipski, Adam Michalik
+          photo: /img/speakers/michallipskiadammichalik.jpg
+          bio: "Michał Lipski<br/>
+		  Doświadczony programista Java i JEE. Entuzjasta technologii opensource i metodologii agile. Na co dzień doskonali swój warsztat praktykując TDD i Pair Programming w firmie Pragmatists.<br/><br/>
+		  Adam Michalik<br/>
+          Pasjonat Javy od bajtkodu do wzorców projektowych. Niezrażony multum antyprzykładów wciąż wierzy , że można pisać Naprawdę Dobry Kod i wiare tę wprowadza w życie w Pragmatists. Fan metodyk zwinnych i TDD, śpi z \"Clean Code\" pod poduszką, a jak dorośnie napisze System Do Wszystkiego i podbije nim świat."
+        slots: 2
+        spots: 40
+        requirements: "Własny laptop z zainstalowanym IDE (Eclipse lub Intellij Idea).<br/>
+		Zainstalowany Maven i Git.<br/>
+		Przydatna będzie znajmość zagadnień testowania.<br/><br/>
+		Polecana lektura:<br/>
+		Test Driven Development: By Example: [Kent Beck]<br/>
+		Growing Object-Oriented Software Guided by Tests [Steve Freeman]<br/>"
+        description: "Wydaje Ci się że twoje testy Cię spowalniają? Failują przy każdej próbie refactoringu i są ciężkie w utrzymaniu. Kiedy próbujesz je naprawić okazuje się że nie da się zrozumieć ich intencji.<br/>
+        Co można z tym zrobić? Jak tworzyć testy którę będa wspierać development, design oraz refactoring aplikacji? Ile testów naprawdę potrzebujemy? Może jak napiszemy ich mniej będziemy mogli programować szybciej?<br/><br/>
+		Podczas warsztatu spróbujemy udzielić odpowiedzi na te pytania. Dowiemy się jak rozpoznawać najczęściej popełniane błędy podczas pracy w TDD i przy tworzeniu testów oraz wykrywać \"code smells\" i \"anti-patterns\" w kodzie testowym.  Nauczymy się ich unikać oraz zmieniać testy na utrzymywalne i przydatne, tak żebyś nie bał się refactorować swojego kodu." 
 
 - name: Build tools
   paths:
