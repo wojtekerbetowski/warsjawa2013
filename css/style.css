@@ -12,6 +12,8 @@ body {
 
 .modal {
     background: #000 url(../img/bg2.png);
+    font-family: Tahoma, Geneva, sans-serif;
+    text-shadow: 0 0 5px #02AEFF, 0 0 10px #02AEFF;
 }
 
 i.off {
@@ -37,7 +39,7 @@ h1 i {
 
 p {
     padding-top: 3%;
-    text-transform: uppercase;
+    
 }
 
 /* SKINS SELECTORS */
@@ -145,7 +147,14 @@ input[type="submit"]{
 }
 
 #agenda_table {
+    font-family: Tahoma, Geneva, sans-serif;
+    text-shadow: 0 0 5px #02AEFF, 0 0 10px #02AEFF;
+}
 
+a:hover, a:focus {
+    color: white;
+    text-shadow: 0 0 5px #FD0000, 0 0 10px #FD0000;
+    text-decoration: none;
 }
 
 #agenda_table td, #agenda_table th {
