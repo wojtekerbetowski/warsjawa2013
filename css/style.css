@@ -170,3 +170,9 @@ a:hover, a:focus {
     height: 150px;
     font-size: large;
 }
+
+.readable {
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 110%;
+    text-shadow: 0 0 5px #02AEFF, 0 0 10px #02AEFF;
+}
