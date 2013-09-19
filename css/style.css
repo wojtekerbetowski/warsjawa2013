@@ -16,6 +16,12 @@ body {
     text-shadow: 0 0 5px #02AEFF, 0 0 10px #02AEFF;
 }
 
+.modal-header .close {
+    opacity: 0.6;
+    font-size: 25px;
+    text-shadow: none;
+}
+
 i.off {
     font-style: normal;
     color: #2C2C2C;
