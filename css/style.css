@@ -17,9 +17,9 @@ body {
 }
 
 .modal-header .close {
-    opacity: 0.6;
-    font-size: 25px;
-    text-shadow: none;
+    opacity: 0.8;
+    font-size: 30px;
+    text-shadow: 0 0 5px #02AEFF, 0 0 10px #02AEFF;
 }
 
 i.off {
