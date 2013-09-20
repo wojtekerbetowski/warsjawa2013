@@ -45,7 +45,7 @@ h1 i {
 
 p {
     padding-top: 3%;
-    
+
 }
 
 /* SKINS SELECTORS */
@@ -155,6 +155,8 @@ input[type="submit"]{
 #agenda_table {
     font-family: Tahoma, Geneva, sans-serif;
     text-shadow: 0 0 5px #02AEFF, 0 0 10px #02AEFF;
+    border: 1px solid #dddddd;
+    background: #282828;
 }
 
 a:hover, a:focus {
@@ -170,6 +172,11 @@ a:hover, a:focus {
 
 #agenda_table th {
     width: 25%;
+    background: #282828;
+}
+
+#agenda_table thead {
+    margin-left: 1px; // for table header always on top script
 }
 
 #agenda_table td {
