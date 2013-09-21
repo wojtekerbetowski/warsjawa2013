@@ -10,3 +10,11 @@ legend {
 select:disabled {
     font-style: italic;
 }
+
+.blue input[type="text"].error ,.blue textarea.error, .blue select.error{
+    box-shadow: 0 0 5px #FF0015, 0 0 10px #FF0015, 0 0 20px #FF0015, 0 0 30px;
+}
+
+.blue input[type="text"]:focus.error ,.blue textarea:focus.error, .blue select:focus.error{
+    box-shadow: 0 0 5px #FF0015, 0 0 10px #FF0015, 0 0 20px #FF0015, 0 0 30px !important;
+}
