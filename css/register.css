@@ -6,3 +6,7 @@
 legend {
     color: #ffffff;
 }
+
+select:disabled {
+    font-style: italic;
+}

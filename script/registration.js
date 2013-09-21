@@ -28,23 +28,11 @@ function clearDropdown(dropdown) {
 }
 
 function loadWorkshops() {
-    allWorkshops = [
-        [
-            {title: "some workshop", length: 1},
-            {title: "other workshop 2", length: 2},
-            {title: "other workshop 3", length: 3}
-        ],
-        [
-            {title: "workshop 2", length: 2},
-            {title: "different workshop", length: 1},
-            {title: "different workshop 1", length: 1}
-        ],
-        [
-            {title: "workshop 5", length: 1},
-            {title: "different www", length: 1},
-            {title: "different wwwaaa", length: 1}
-        ]
-    ];
+    $.ajax("http://localhost:8080/register/workshops")
+        .done(function(data) {
+            allWorkshops = data;
+            fillDropdowns();
+        });
 }
 
 function titleToDisplay(workshop) {
@@ -66,6 +54,7 @@ function fillDropdown(dropdown, workshops) {
 }
 function fillDropdowns() {
     $.each(allWorkshops, function (index, workshops) {
+        fillDropdown(dropdownIdAtIndex(index), allWorkshops[index]);
     });
 }
 function forceWorkshopSelection(dropdownId, workshop) {
@@ -76,7 +65,6 @@ function forceWorkshopSelection(dropdownId, workshop) {
 $(document).ready(function () {
     loadWorkshops();
     $.each($('select'), function (index, dropdown) {
-        fillDropdown(dropdownIdAtIndex(index), allWorkshops[index]);
         $(dropdown).change(function () {
             var selectedWorkshop = allWorkshops[index][this.selectedIndex - 1];
             var second = index + 1;
