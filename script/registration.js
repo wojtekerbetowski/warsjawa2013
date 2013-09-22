@@ -29,10 +29,13 @@ function clearDropdown(dropdown) {
 }
 
 function loadWorkshops() {
-    $.ajax("http://localhost:8080/register/workshops")
-        .done(function (data) {
+    $.ajax("http://localhost:8080/workshops")
+        .success(function (data) {
             allWorkshops = data;
             fillDropdowns();
+        })
+        .fail(function (errMsg) {
+            alert("Nie udało się załadować dostępnych warsztatów. Spróbuj później.");
         });
 }
 
@@ -129,17 +132,26 @@ $(document).ready(function () {
                 if (workshop != DEFAULT_OPTION)
                     message += "\n- " + workshop;
             }
-
+            var workshopsURI = encodeURIComponent(workshop1);
             appendWorkshopToMessage(workshop1);
             if (workshop2 != workshop1) {
                 appendWorkshopToMessage(workshop2);
+                workshopsURI += "," + encodeURIComponent(workshop2);
             }
             if (workshop3 != workshop2) {
                 appendWorkshopToMessage(workshop3);
+                workshopsURI += "," + encodeURIComponent(workshop3);
             }
 
             message += "\n\nNiedługo dostaniesz maila na adres " + email;
-            alert(message);
+
+            $.ajax("http://localhost:8080/book/" + encodeURIComponent(email) + "/" + encodeURIComponent(name) + "/" + workshopsURI)
+                .success(function (data) {
+                    alert(message);
+                })
+                .fail(function(errMsg) {
+                    alert("Nieoczekiwany błąd! Spróbuj później lub skontkatuj się z kapitułą Warsjawy.");
+                });
         }
     });
 });
