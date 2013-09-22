@@ -20,6 +20,9 @@ function addWorkshop(dropdown, workshop) {
     var workshopElement = $("<option></option>")
         .attr("value", workshop.id)
         .text(titleToDisplay(workshop));
+    if(workshop.disabled) {
+        workshopElement.attr("disabled", "disabled");
+    }
     getDropdown(dropdown).append(workshopElement);
     return workshopElement;
 }
@@ -47,7 +50,7 @@ function fillDropdown(dropdown, workshops) {
     clearDropdown(dropdown);
 
     var selectMessage = $("<option></option>")
-        .attr("value", DEFAULT_OPTION)
+        .attr("value", -1)
         .text(DEFAULT_OPTION).attr('selected', 'selected');
     getDropdown(dropdown).append(selectMessage);
     dropdown.workshops = workshops;
@@ -139,15 +142,21 @@ $(document).ready(function () {
                     message += "\n- " + workshop;
             }
 
-            var workshopsURI = "http://localhost:8080/book/" + encodeURIComponent(email) + "/" + encodeURIComponent(name) + "/" + workshop1Id;
+            var workshopsURI = "http://localhost:8080/book/" + encodeURIComponent(email) + "/" + encodeURIComponent(name) + "/";
+
+            function appendWorkshopToURI(sep, workshop) {
+                if (workshop != -1)
+                    workshopsURI += sep + workshop;
+            }
+            appendWorkshopToURI("/", workshop1Id);
             appendWorkshopToMessage(workshop1Name);
             if (workshop2Id != workshop1Id) {
                 appendWorkshopToMessage(workshop2Name);
-                workshopsURI += "," + workshop2Id;
+                appendWorkshopToURI(",", workshop2Id);
             }
             if (workshop3Id != workshop2Id) {
                 appendWorkshopToMessage(workshop3Name);
-                workshopsURI += "," + workshop3Id;
+                appendWorkshopToURI(",", workshop3Id);
             }
 
             message += "\n\nNiedługo dostaniesz maila na adres " + email;
@@ -155,9 +164,14 @@ $(document).ready(function () {
             $.ajax(workshopsURI)
                 .success(function (data) {
                     alert(message);
+                    loadWorkshops();
+                    fillDropdowns();
                 })
                 .fail(function (errMsg) {
-                    alert("Nieoczekiwany błąd! Spróbuj później lub skontkatuj się z kapitułą Warsjawy.");
+                    alert("Nieoczekiwany błąd! Spróbuj jeszcze raz później lub skontkatuj się z kapitułą Warsjawy.\n" +
+                          "(tip: być może w międzyczasie skończyły się miejsca na Twój warsztat)");
+                    loadWorkshops();
+                    fillDropdowns();
                 });
         }
     });
