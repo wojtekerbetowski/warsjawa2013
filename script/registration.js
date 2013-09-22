@@ -18,7 +18,7 @@ function enableDropdown(dropdownId) {
 
 function addWorkshop(dropdown, workshop) {
     var workshopElement = $("<option></option>")
-        .attr("value", workshop.title)
+        .attr("value", workshop.id)
         .text(titleToDisplay(workshop));
     getDropdown(dropdown).append(workshopElement);
     return workshopElement;
@@ -66,8 +66,11 @@ function forceWorkshopSelection(dropdownId, workshop) {
     addWorkshop(dropdownId, workshop).attr('selected', 'selected');
     disableDropdown(dropdownId);
 }
-function getWorkshopAtIndex(index) {
+function getWorkshopIdAtIndex(index) {
     return $('form').find("#workshops" + index).val();
+}
+function getWorkshopNameAtIndex(index) {
+    return $('form').find("#workshops" + index + " :selected").text();
 }
 
 function isDropdownDisabled(dropdownIndex) {
@@ -82,16 +85,16 @@ $(document).ready(function () {
             var third = index + 2;
             switch (selectedWorkshop.length) {
                 case 1:
-                    if(isDropdownDisabled(second)) {
+                    if (isDropdownDisabled(second)) {
                         fillDropdown(dropdownIdAtIndex(second), allWorkshops[second]);
-                        if(isDropdownDisabled(third)) {
+                        if (isDropdownDisabled(third)) {
                             fillDropdown(dropdownIdAtIndex(third), allWorkshops[third]);
                         }
                     }
                     break;
                 case 2:
                     forceWorkshopSelection(dropdownIdAtIndex(second), selectedWorkshop);
-                    if(isDropdownDisabled(third)) {
+                    if (isDropdownDisabled(third)) {
                         fillDropdown(dropdownIdAtIndex(third), allWorkshops[third]);
                     }
                     break;
@@ -122,9 +125,12 @@ $(document).ready(function () {
             var form = $(formSelector);
             var name = form.find("#name").val();
             var email = form.find("#email").val();
-            var workshop1 = getWorkshopAtIndex(0);
-            var workshop2 = getWorkshopAtIndex(1);
-            var workshop3 = getWorkshopAtIndex(2);
+            var workshop1Id = getWorkshopIdAtIndex(0);
+            var workshop1Name = getWorkshopNameAtIndex(0);
+            var workshop2Id = getWorkshopIdAtIndex(1);
+            var workshop2Name = getWorkshopNameAtIndex(1);
+            var workshop3Id = getWorkshopIdAtIndex(2);
+            var workshop3Name = getWorkshopNameAtIndex(2);
 
             var message = name + ",\nZostałeś zarejestrowany na:";
 
@@ -132,24 +138,25 @@ $(document).ready(function () {
                 if (workshop != DEFAULT_OPTION)
                     message += "\n- " + workshop;
             }
-            var workshopsURI = encodeURIComponent(workshop1);
-            appendWorkshopToMessage(workshop1);
-            if (workshop2 != workshop1) {
-                appendWorkshopToMessage(workshop2);
-                workshopsURI += "," + encodeURIComponent(workshop2);
+
+            var workshopsURI = "http://localhost:8080/book/" + encodeURIComponent(email) + "/" + encodeURIComponent(name) + "/" + workshop1Id;
+            appendWorkshopToMessage(workshop1Name);
+            if (workshop2Id != workshop1Id) {
+                appendWorkshopToMessage(workshop2Name);
+                workshopsURI += "," + workshop2Id;
             }
-            if (workshop3 != workshop2) {
-                appendWorkshopToMessage(workshop3);
-                workshopsURI += "," + encodeURIComponent(workshop3);
+            if (workshop3Id != workshop2Id) {
+                appendWorkshopToMessage(workshop3Name);
+                workshopsURI += "," + workshop3Id;
             }
 
             message += "\n\nNiedługo dostaniesz maila na adres " + email;
 
-            $.ajax("http://localhost:8080/book/" + encodeURIComponent(email) + "/" + encodeURIComponent(name) + "/" + workshopsURI)
+            $.ajax(workshopsURI)
                 .success(function (data) {
                     alert(message);
                 })
-                .fail(function(errMsg) {
+                .fail(function (errMsg) {
                     alert("Nieoczekiwany błąd! Spróbuj później lub skontkatuj się z kapitułą Warsjawy.");
                 });
         }

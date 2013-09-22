@@ -114,13 +114,17 @@ p {
     margin:0 0 0 0
 }
 
-input[type="text"],textarea,select{
+input[type="text"],textarea{
     background:#fff;
     width:422px;
     font-size:17px;
     border:0;
     border-radius:4px;
     padding-left: 15px;
+}
+
+select {
+    width:442px;
 }
 
 input[type="text"]{
