@@ -32,7 +32,7 @@ function clearDropdown(dropdown) {
 }
 
 function loadWorkshops() {
-    $.ajax("http://localhost:8080/workshops")
+    $.ajax("http://46.105.25.37:8181/workshops")
         .success(function (data) {
             allWorkshops = data;
             fillDropdowns();
@@ -142,7 +142,7 @@ $(document).ready(function () {
                     message += "\n- " + workshop;
             }
 
-            var workshopsURI = "http://localhost:8080/book/" + encodeURIComponent(email) + "/" + encodeURIComponent(name) + "/";
+            var workshopsURI = "http://46.105.25.37:8181/book/" + encodeURIComponent(email) + "/" + encodeURIComponent(name) + "/";
 
             function appendWorkshopToURI(sep, workshop) {
                 if (workshop != -1)
