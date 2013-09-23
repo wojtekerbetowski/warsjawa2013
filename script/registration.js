@@ -1,5 +1,6 @@
 var allWorkshops;
 var DEFAULT_OPTION = "Wybierz warsztat...";
+var NONE_OPTION = "Żaden"
 function getDropdown(dropdownId) {
     return $('select#' + dropdownId);
 }
@@ -57,6 +58,10 @@ function fillDropdown(dropdown, workshops) {
     $.each(workshops, function (index, workshop) {
         addWorkshop(dropdown, workshop);
     });
+    var noneOption = $("<option></option>")
+        .attr("value", -2)
+        .text(NONE_OPTION);
+    getDropdown(dropdown).append(noneOption);
     enableDropdown(dropdown);
 }
 function fillDropdowns() {
@@ -138,17 +143,17 @@ $(document).ready(function () {
             var message = name + ",\nZostałeś zarejestrowany na:";
 
             function appendWorkshopToMessage(workshop) {
-                if (workshop != DEFAULT_OPTION)
+                if (workshop != DEFAULT_OPTION && workshop != NONE_OPTION)
                     message += "\n- " + workshop;
             }
 
             var workshopsURI = "http://46.105.25.37:8181/book/" + encodeURIComponent(email) + "/" + encodeURIComponent(name) + "/";
 
             function appendWorkshopToURI(sep, workshop) {
-                if (workshop != -1)
+                if (workshop >= 0)
                     workshopsURI += sep + workshop;
             }
-            appendWorkshopToURI("/", workshop1Id);
+            appendWorkshopToURI("", workshop1Id);
             appendWorkshopToMessage(workshop1Name);
             if (workshop2Id != workshop1Id) {
                 appendWorkshopToMessage(workshop2Name);
