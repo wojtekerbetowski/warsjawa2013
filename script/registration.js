@@ -169,8 +169,7 @@ $(document).ready(function () {
             $.ajax(workshopsURI)
                 .success(function (data) {
                     alert(message);
-                    loadWorkshops();
-                    fillDropdowns();
+                    window.location.href = "../"
                 })
                 .fail(function (errMsg) {
                     alert("Nieoczekiwany błąd! Spróbuj jeszcze raz później lub skontkatuj się z kapitułą Warsjawy.\n" +
