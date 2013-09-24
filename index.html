@@ -5,6 +5,17 @@ tracks:
 - name: JVM
   paths:
     - talks:
+      - id: profiling
+        slots: 2
+        title: Profilowanie aplikacji JVM
+        speaker:
+          name: Kuba Kubryński i Michał Warecki
+          photo: /img/speakers/kuba_kubrynski_michal_warecki.jpg
+          bio: "Michał jest programistą skupiającym się na technologiach opartych o JVM. Jego głównymi obszarami zainteresowań są algorytmy GC, współbieżność, algorytmy wolne od blokad czy kompilatory typu JIT. Tworząc oprogramowanie pamięta jak zbudowane są współczesne procesowy, pamięć fizyczna oraz system operacyjny. Nie ogranicza się tylko do poziomu bytecode'u lecz obserwuje także wewnętrzne komponenty OpenJDK oraz kod maszynowy przez nie generowany.<br/><br/>Kuba jest zawodowo związany z PayU z ramienia którego odpowiada za ogniwo rozwojowe w Warszawie. Prywatnie czuje się mocno przywiązany do pakietu java.util.concurrent i klasy sun.misc.Unsafe. Poza tym pasjonują go lekkie aplikacje, w których stosunek kodu do dostarczanej funkcjonalności jest jak najmniejszy :)"
+        description: "Podczas warsztatu nauczymy się analizować co się dzieje w naszych aplikacjach na poziomie JVM. Poznamy dostępne narzędzia (zarówno bezpłatne jak i komercyjne) i nauczymy się je wykorzystywać do analizy elementów takich jak pamięć, IO, Garbage Collector, JIT, wątki. Poznamy zasady rządzące profilowaniem systemów i nauczymy się wykorzystywać je w praktyce."
+        requirements: "Laptop z JDK HotSpot 7u40, JProfiler (wystarczy aktywna wersja trial), Maven, GIT"
+        spots: 40
+
       - id: java8
         title: Java 8 – najbardziej rewolucyjna wersja w historii
         speaker:
@@ -14,17 +25,6 @@ tracks:
         description: "Podczas warsztatów zapoznamy się w praktyce z nowościami w ósmej już wersji Javy. Oczywiście szczególny nacisk położymy na wyrażenia lambda ('domknięcia'), ale będzie to jedynie wstęp. Dużo czasu poświęcimy na ćwiczenia z unowocześnionymi kolekcjami oraz jeszcze lepszym wsparciem dla wielowątkowości.<br/><br/>Przyjrzymy się również niezliczonym nowościom w standardowym API, zwłaszcza pakietowi java.time."
         requirements: "Laptop z zainstalowanym JDK 8 (http://jdk8.java.net/lambda/). Jako IDE polecam IntelliJ IDEA (wystarczy darmowa wersja Community) - lub notatnik. Przyda się git.<br/><br/>Wcześniejsza znajomość programowania funkcyjnego nie jest wymagana a wręcz niepożądana."
         spots: 20
-
-      - id: profiling
-        slots: 2
-        title: Profilowanie aplikacji JVM
-        speaker:
-          name: Kuba Kubryński i Michał Warecki
-          photo: /img/tbd.png
-          bio: TBD
-        description: TBD
-        requirements: TBD
-        spots: 30
 
 - name: Frameworks
   paths:
