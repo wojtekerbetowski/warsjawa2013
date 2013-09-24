@@ -21,7 +21,7 @@ function addWorkshop(dropdown, workshop) {
     var workshopElement = $("<option></option>")
         .attr("value", workshop.id)
         .text(titleToDisplay(workshop));
-    if(workshop.disabled) {
+    if (workshop.disabled) {
         workshopElement.attr("disabled", "disabled");
     }
     getDropdown(dropdown).append(workshopElement);
@@ -88,10 +88,18 @@ $(document).ready(function () {
     loadWorkshops();
     $.each($('select'), function (index, dropdown) {
         $(dropdown).change(function () {
-            var selectedWorkshop = allWorkshops[index][this.selectedIndex - 1];
+            var selectedText = $(this).find(":selected").text();
+            var length;
+            if (selectedText == DEFAULT_OPTION || selectedText == NONE_OPTION) {
+                length = 1;
+
+            } else {
+                var selectedWorkshop = allWorkshops[index][this.selectedIndex - 1];
+                length = selectedWorkshop.length;
+            }
             var second = index + 1;
             var third = index + 2;
-            switch (selectedWorkshop.length) {
+            switch (length) {
                 case 1:
                     if (isDropdownDisabled(second)) {
                         fillDropdown(dropdownIdAtIndex(second), allWorkshops[second]);
@@ -153,6 +161,7 @@ $(document).ready(function () {
                 if (workshop >= 0)
                     workshopsURI += sep + workshop;
             }
+
             appendWorkshopToURI("", workshop1Id);
             appendWorkshopToMessage(workshop1Name);
             if (workshop2Id != workshop1Id) {
