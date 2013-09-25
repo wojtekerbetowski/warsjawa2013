@@ -60,7 +60,7 @@ p {
 
 .blue input[type="submit"]{border: 1px solid #02AEFF;background:#02AEFF;}
 
-.blue input[type="text"] ,.blue textarea{
+.blue input[type="text"] ,.blue textarea, .blue select{
     box-shadow: 0 0 5px #02AEFF, 0 0 10px #02AEFF, 0 0 20px #02AEFF, 0 0 30px
 }
 
@@ -121,6 +121,10 @@ input[type="text"],textarea{
     border:0;
     border-radius:4px;
     padding-left: 15px;
+}
+
+select {
+    width:442px;
 }
 
 input[type="text"]{
