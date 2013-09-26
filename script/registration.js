@@ -35,7 +35,11 @@ function clearDropdown(dropdown) {
 function loadWorkshops() {
     $.ajax("http://46.105.25.37:8181/workshops")
         .success(function (data) {
-            allWorkshops = data;
+            if(typeof(data) == "string") {
+                allWorkshops = $.parseJSON(data);
+            } else {
+                allWorkshops = data;
+            }
             fillDropdowns();
         })
         .fail(function (errMsg) {
