@@ -197,4 +197,6 @@ a:hover, a:focus {
 
 .partners img {
     padding: 20px;
+    max-height: 200px;
+    max-width: 200px;
 }
