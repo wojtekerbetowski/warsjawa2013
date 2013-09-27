@@ -200,3 +200,12 @@ a:hover, a:focus {
     max-height: 200px;
     max-width: 200px;
 }
+
+.sponsors {
+    background-color: #ffffff;
+}
+
+.sponsors img {
+    max-width: 200px;
+    padding: 20px;
+}
